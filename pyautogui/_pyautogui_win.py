@@ -32,20 +32,20 @@ UPDATE: SendInput() doesn't seem to be working for me. I've switched back to mou
 
 # Event codes to be passed to the mouse_event() win32 function.
 # Documented here: http://msdn.microsoft.com/en-us/library/windows/desktop/ms646273(v=vs.85).aspx
-MOUSEEVENTF_MOVE = 0x0001
-MOUSEEVENTF_LEFTDOWN = 0x0002
-MOUSEEVENTF_LEFTUP = 0x0004
+MOUSEEVENTF_MOVE = 0x0001 # Movement occured
+MOUSEEVENTF_LEFTDOWN = 0x0002 # The left button was pressed.
+MOUSEEVENTF_LEFTUP = 0x0004 # The left button was released
 MOUSEEVENTF_LEFTCLICK = MOUSEEVENTF_LEFTDOWN + MOUSEEVENTF_LEFTUP
-MOUSEEVENTF_RIGHTDOWN = 0x0008
-MOUSEEVENTF_RIGHTUP = 0x0010
+MOUSEEVENTF_RIGHTDOWN = 0x0008 # The right button was pressed.
+MOUSEEVENTF_RIGHTUP = 0x0010 # The right button was released.
 MOUSEEVENTF_RIGHTCLICK = MOUSEEVENTF_RIGHTDOWN + MOUSEEVENTF_RIGHTUP
-MOUSEEVENTF_MIDDLEDOWN = 0x0020
-MOUSEEVENTF_MIDDLEUP = 0x0040
+MOUSEEVENTF_MIDDLEDOWN = 0x0020 # The middle button was pressed.
+MOUSEEVENTF_MIDDLEUP = 0x0040 # The middle button was released.
 MOUSEEVENTF_MIDDLECLICK = MOUSEEVENTF_MIDDLEDOWN + MOUSEEVENTF_MIDDLEUP
 
-MOUSEEVENTF_ABSOLUTE = 0x8000
-MOUSEEVENTF_WHEEL = 0x0800
-MOUSEEVENTF_HWHEEL = 0x01000
+MOUSEEVENTF_ABSOLUTE = 0x8000 # The dx and dy members contain normalized absolute coordinates. If the flag is not set, dxand dy contain relative data (the change in position since the last reported position). This flag can be set, or not set, regardless of what kind of mouse or other pointing device, if any, is connected to the system.
+MOUSEEVENTF_WHEEL = 0x0800 # The wheel was moved, if the mouse has a wheel. The amount of movement is specified in mouseData.
+MOUSEEVENTF_HWHEEL = 0x01000 # The wheel was moved horizontally, if the mouse has a wheel. The amount of movement is specified in mouseData.
 
 # Documented here: http://msdn.microsoft.com/en-us/library/windows/desktop/ms646304(v=vs.85).aspx
 KEYEVENTF_KEYDOWN = 0x0000 # Technically this constant doesn't exist in the MS documentation. It's the lack of KEYEVENTF_KEYUP that means pressing the key down.
